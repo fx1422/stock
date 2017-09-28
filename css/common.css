@@ -1,0 +1,24 @@
+@charset "UTF-8";
+/***
+公用样式表
+****/
+/*color*/
+/*字体大小*/
+body {
+  height: 100%;
+  width: 100%; }
+
+html, body, ul, img {
+  padding: 0;
+  margin: 0; }
+
+ul li {
+  list-style: none; }
+
+.content {
+  height: 100vh;
+  max-width: 640px;
+  margin: auto;
+  background-color: #F3F3F3; }
+
+/*# sourceMappingURL=common.css.map */
