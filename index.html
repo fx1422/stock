@@ -10,11 +10,12 @@
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/iconfont.css">
     <link rel="stylesheet" href="css/index.css">
+
 </head>
 <body>
 <div class="content">
     <div class="item-1">
-       <div class="left"><i><img src="" alt=""></i></div>
+        <div class="left"><img src="img/index/login.png" alt=""></div>
         <div class="right">
             <div class="top">资产 <span>99999</span>元</div>
             <div class="bottom">
@@ -23,9 +24,32 @@
             </div>
         </div>
     </div>
-    <div class="item-2"></div>
-
-
+    <div class="item-2 optionType">
+        <div class="active" data-value="PE">
+            <span>聚乙烯</span>
+            <span>1388</span>
+        </div>
+        <div data-value="AG">
+            <span>白银</span>
+            <span>12999</span>
+        </div>
+    </div>
+    <div class="item-3">
+        <span>昨收:<span>1366</span></span> <span>今开:<span>1366</span></span> <span>最高:<span>1366</span></span>
+        <span>最低:<span>1366</span></span>
+    </div>
+    <div class="item-4">
+        <div id="sharingPlans"></div>
+        <div id="candlestickCharts"></div>
+    </div>
+    <div class="item-5">
+        <span class="active" data-id="0">分时图</span> <span data-id="5">5分钟K线</span> <span data-id="10">10分钟K线</span>
+        <span data-id="60">60分钟K线</span>
+    </div>
+    <div class="item-6">
+        <div class="betBtn" data-type="看涨">看涨</div>
+        <div class="betBtn" data-type="看跌">看跌</div>
+    </div>
     <div class="tab">
         <ul>
             <li class="active">
@@ -42,12 +66,127 @@
             </li>
         </ul>
     </div>
+    <div class="back-drop"></div>
+    <div class="bet-dialog">
+        <div class="item"><span>聚乙烯</span><span class="betType">看涨</span>建仓 <i class="iconfont icon-ddqx close-bet"></i>
+        </div>
+        <div class="item">
+            <div>保证金(元/手)</div>
+            <div class="betCash"><span class="active" data-num="10">10</span><span data-num="50">50</span><span
+                    data-num="100">100</span><span data-num="500">500</span><span data-num="1000">1000</span><span
+                    data-num="2000">2000</span>
+            </div>
+        </div>
+        <div class="item">
+            <div>止盈止损档位</div>
+            <div class="stall"><span class="active" data-num="5">5</span><span data-num="7">7</span><span data-num="10">10</span>
+            </div>
+        </div>
+        <div class="item">
+            <div>手数</div>
+            <div class="betTimes"><span class="active">1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+                <span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
+            </div>
+        </div>
+        <div class="item">总保证金:10</div>
+        <div class="item">
+            <div class=" btn submit">确认</div>
+        </div>
+        <div class="item">
+            <p>交易时间:周一09:00至周六04:00</p>
+            <p>每天04:00至08:00休市结算</p>
+        </div>
+    </div>
 </div>
 </body>
 <script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
-<script src="https://cdn.bootcss.com/iScroll/5.2.0/iscroll.min.js"></script>
+<script src="https://cdn.bootcss.com/echarts/3.7.1/echarts.min.js"></script>
 <script src="libs/common.js"></script>
+<script src="js/index.js"></script>
+<script src="js/timeChart.js"></script>
+<script src="js/candleChart.js"></script>
 <script>
+    $(function () {
+        drawTimeChart();
+        var optionType='PE',optionTrend='看涨', perPrice = 10, stall = 5, rates = 1
 
+        //投注弹层
+        $('.betBtn').on('click', function () {
+             optionTrend = $(this).attr('data-type');
+            $('.betType').text(optionTrend);
+            $('.back-drop').show();
+            $('.bet-dialog').alert()
+        });
+        //关闭投注弹层
+        $('.close-bet').on('click', function () {
+            $('.back-drop').hide();
+            $('.bet-dialog').leave();
+        });
+        //选择投注的种类
+        $('.optionType div').on('click',function () {
+            $('.optionType div').removeClass('active')
+            $(this).addClass('active')
+            optionType = $(this).attr('data-value')
+        })
+        //选择投注的金额
+        $('.betCash span').on('click', function () {
+            perPrice = $(this).attr('data-num');
+            $('.betCash span').removeClass('active');
+            $(this).addClass('active')
+        });
+
+        //选择止盈止损档位
+        $('.stall span').on('click', function () {
+            stall = $(this).attr('data-num')
+            $('.stall span').removeClass('active');
+            $(this).addClass('active')
+
+        })
+        //选择手数
+        $('.betTimes span').on('click', function () {
+            $('.betTimes span').removeClass('active')
+            $(this).addClass('active')
+            rates = $(this).index() + 1;
+        })
+        //确认投注
+        $('.submit').on('click', function () {
+            console.log(optionType,optionTrend,perPrice,stall,rates)
+        })
+
+        //曲线绘制
+        $('.item-5 span').on('click', function () {
+            const dataId = Number($(this).attr('data-id'))
+            $('.item-5 span').removeClass('active')
+            $(this).addClass('active')
+            if (dataId === 0) {
+                $('#sharingPlans').show()
+                $('#candlestickCharts').hide()
+
+            } else {
+                $('#sharingPlans').hide()
+                $('#candlestickCharts').show()
+            }
+            switchChart(dataId)
+        })
+    })
+
+
+    function switchChart(id) {
+        switch (id) {
+            case 0:
+                drawTimeChart();
+                break;
+            case 5:
+                drawCandleChart();
+                break;
+            case 10:
+                drawCandleChart(10);
+                break;
+            case 60:
+                drawCandleChart(60);
+                break;
+
+        }
+    }
 </script>
 </html>

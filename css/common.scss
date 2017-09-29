@@ -1,9 +1,12 @@
 @import "variable";
 
-body{
+body {
   height: 100%;
-  width:100%;
+  width: 100%;
+  background-color: black;
+  font-family: "Helvetica,Arial,'宋体',sans-serif";
 }
+
 html, body, ul, img {
   padding: 0;
   margin: 0;
@@ -18,4 +21,56 @@ ul li {
   max-width: 640px;
   margin: auto;
   background-color: $backgroudColor;
+}
+
+.animation-show {
+  animation-name: show;
+  animation-duration: 500ms;
+  animation-fill-mode: both;
+  -webkit-animation-name: show;
+  -webkit-animation-duration: 500ms;
+  -webkit-animation-fill-mode: both;
+  animation-timing-function:linear
+}
+.animation-hide{
+  animation-name: hide;
+  animation-duration: 500ms;
+  animation-fill-mode: both;
+  -webkit-animation-name: hide;
+  -webkit-animation-duration: 500ms;
+  -webkit-animation-fill-mode: both;
+  animation-timing-function:linear
+  
+}
+@keyframes show {
+  0% {
+	transform: scale(0.2);
+  }
+  50% {
+	transform: scale(1.1);
+	
+  }
+  100% {
+	transform: scale(1);
+  }
+}
+@keyframes hide {
+  0% {
+	transform: scale(1);
+  }
+  25% {
+	transform: scale(0.75);
+	
+  }
+  50% {
+	transform: scale(0.5);
+	
+  }
+  75% {
+	transform: scale(0.25);
+	
+  }
+  100% {
+	transform: scale(0);
+  }
 }
