@@ -1,13 +1,17 @@
 @import "common";
 
 .tab {
-  position: fixed;
+  position: absolute;
+  max-width: 640px;
+  left: 0;
+  right: 0;
+  margin: auto;
   bottom: 0;
   width: 100%;
   height: $tabHeight;
   border-top: 1px solid #E6E6E6;
   background-color: $colorWhite;
-  padding: 0 1.4rem;
+  padding: 0.2rem 1.4rem;
   box-sizing: border-box;
   ul {
 	display: flex;
@@ -15,7 +19,7 @@
 	justify-content: space-between;
 	align-items: center;
 	height: 100%;
-	li{
+	li {
 	  height: 100%;
 	  display: flex;
 	  flex-direction: column;
@@ -23,15 +27,15 @@
 	  align-content: center;
 	  justify-content: center;
 	  color: $colorGray;
-	  i{
-		font-size: 1.3rem;
+	  i {
+		font-size: 1.1rem;
 	  }
-	  span{
+	  span {
 		font-size: $fontSize-s;
 	  }
 	}
   }
-  .active{
+  .active {
 	color: $colorRed !important;
   }
 }

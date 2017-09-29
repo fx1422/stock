@@ -7,7 +7,9 @@
 /*高度*/
 body {
   height: 100%;
-  width: 100%; }
+  width: 100%;
+  background-color: black;
+  font-family: "Helvetica,Arial,'瀹嬩綋',sans-serif"; }
 
 html, body, ul, img {
   padding: 0;
@@ -22,14 +24,54 @@ ul li {
   margin: auto;
   background-color: #F3F3F3; }
 
+.animation-show {
+  animation-name: show;
+  animation-duration: 500ms;
+  animation-fill-mode: both;
+  -webkit-animation-name: show;
+  -webkit-animation-duration: 500ms;
+  -webkit-animation-fill-mode: both;
+  animation-timing-function: linear; }
+
+.animation-hide {
+  animation-name: hide;
+  animation-duration: 500ms;
+  animation-fill-mode: both;
+  -webkit-animation-name: hide;
+  -webkit-animation-duration: 500ms;
+  -webkit-animation-fill-mode: both;
+  animation-timing-function: linear; }
+
+@keyframes show {
+  0% {
+    transform: scale(0.2); }
+  50% {
+    transform: scale(1.1); }
+  100% {
+    transform: scale(1); } }
+@keyframes hide {
+  0% {
+    transform: scale(1); }
+  25% {
+    transform: scale(0.75); }
+  50% {
+    transform: scale(0.5); }
+  75% {
+    transform: scale(0.25); }
+  100% {
+    transform: scale(0); } }
 .tab {
-  position: fixed;
+  position: absolute;
+  max-width: 640px;
+  left: 0;
+  right: 0;
+  margin: auto;
   bottom: 0;
   width: 100%;
-  height: 2.6rem;
+  height: 7vh;
   border-top: 1px solid #E6E6E6;
   background-color: #FEFFFF;
-  padding: 0 1.4rem;
+  padding: 0.2rem 1.4rem;
   box-sizing: border-box; }
   .tab ul {
     display: flex;
@@ -46,15 +88,266 @@ ul li {
       justify-content: center;
       color: #686868; }
       .tab ul li i {
-        font-size: 1.3rem; }
+        font-size: 1.1rem; }
       .tab ul li span {
         font-size: 0.5rem; }
   .tab .active {
     color: #E63738 !important; }
 
 .item-1 {
-  height: 3.2rem;
+  height: 10vh;
   width: 100%;
+  background-color: #FEFFFF;
+  display: flex; }
+  .item-1 .left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .item-1 .left img {
+      height: 3rem;
+      width: 3rem; }
+  .item-1 .right {
+    flex: 4; }
+    .item-1 .right .top {
+      height: 50%;
+      color: #686868;
+      line-height: 1.7rem;
+      font-size: 0.65rem; }
+      .item-1 .right .top span {
+        color: #EC7F19; }
+    .item-1 .right .bottom {
+      display: flex; }
+      .item-1 .right .bottom div {
+        height: 1.1rem;
+        line-height: 1.1rem;
+        font-size: 0.5rem;
+        width: 6rem;
+        background-color: #2093EC;
+        color: #FEFFFF;
+        padding: 0.1rem;
+        text-align: center;
+        border-radius: 2px;
+        margin-right: 0.3rem; }
+      .item-1 .right .bottom div:active {
+        background-color: #1870B3; }
+
+.item-2 {
+  height: 9vh;
+  background-color: #F3F3F3;
+  width: 100%;
+  display: flex;
+  text-align: left; }
+  .item-2 div {
+    width: 50%;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding-left: 0.8rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
+    .item-2 div span:nth-child(2) {
+      color: #E63738;
+      font-size: 0.8rem;
+      font-weight: 500; }
+  .item-2 .active {
+    background-color: #EEF7FE;
+    border-bottom: 2px solid #64B3F0; }
+
+.item-3 {
+  height: 4vh;
+  background-color: #FEFFFF;
+  font-size: 0.65rem;
+  color: #686868;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.4rem;
+  box-sizing: border-box;
+  align-items: center;
+  border-bottom: 1px solid #F0EFF4; }
+  .item-3 span span {
+    color: #0F0F0F;
+    font-size: 0.65rem; }
+
+.item-4 {
+  width: 100%;
+  height: 58vh;
+  background-color: #FEFFFF;
+  padding: 0.4rem 0;
+  box-sizing: border-box; }
+  .item-4 #sharingPlans, .item-4 #candlestickCharts {
+    height: 100%;
+    width: 100%; }
+  .item-4 #candlestickCharts {
+    display: none; }
+
+.item-5 {
+  height: 4vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 0.65rem;
+  color: #64B3F0;
   background-color: #FEFFFF; }
+  .item-5 span {
+    width: 24.8%;
+    text-align: center;
+    height: 100%;
+    line-height: 1.4rem;
+    background-color: #F3F3F3; }
+  .item-5 .active {
+    background-color: #FEFFFF; }
+
+.item-6 {
+  display: flex;
+  font-size: 0.65rem;
+  color: #FEFFFF;
+  height: 8vh;
+  padding: 0.2rem;
+  box-sizing: border-box;
+  justify-content: space-around;
+  background-color: #FEFFFF; }
+  .item-6 div {
+    height: 100%;
+    width: 46%;
+    border-radius: 4px;
+    text-align: center;
+    line-height: calc(8vh - 0.4rem); }
+  .item-6 div:nth-child(1) {
+    background-color: #E63738; }
+  .item-6 div:nth-child(1):active {
+    background-color: #982525; }
+  .item-6 div:nth-child(2) {
+    background-color: #1EB840; }
+  .item-6 div:nth-child(2):active {
+    background-color: #147a2b; }
+
+.back-drop {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  max-width: 640px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: #0F0F0F;
+  opacity: 0.6;
+  z-index: 500;
+  display: none; }
+
+/*bet------dialog*/
+.bet-dialog {
+  display: none;
+  position: absolute;
+  width: 92vw;
+  height: 68vh;
+  max-width: 600px;
+  z-index: 9999999 !important;
+  background-color: #FEFFFF;
+  box-sizing: border-box;
+  top: 23vh;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 4px; }
+  .bet-dialog .item:nth-child(1) {
+    height: 6vh;
+    border-bottom: 2px solid #DDDDDD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7rem;
+    font-weight: 600;
+    position: relative; }
+    .bet-dialog .item:nth-child(1) span {
+      margin-right: 0.4rem; }
+    .bet-dialog .item:nth-child(1) span:nth-child(1) {
+      color: #E63738; }
+    .bet-dialog .item:nth-child(1) span:nth-child(2) {
+      color: #E63738; }
+    .bet-dialog .item:nth-child(1) i {
+      position: absolute;
+      right: 0.9rem;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      font-size: 1.4rem;
+      height: 1.4rem;
+      color: #D6D6D6; }
+  .bet-dialog .item:nth-child(2), .bet-dialog .item:nth-child(3) {
+    box-sizing: border-box;
+    padding: 0.3rem 1rem; }
+    .bet-dialog .item:nth-child(2) div:nth-child(1), .bet-dialog .item:nth-child(3) div:nth-child(1) {
+      font-size: 0.65rem;
+      color: #A2A2A2;
+      letter-spacing: 2px; }
+    .bet-dialog .item:nth-child(2) div:nth-child(2), .bet-dialog .item:nth-child(3) div:nth-child(2) {
+      display: flex;
+      justify-content: space-around;
+      font-size: 0.7rem;
+      height: 1.4rem;
+      margin-top: 0.4rem;
+      flex-wrap: wrap; }
+      .bet-dialog .item:nth-child(2) div:nth-child(2) span, .bet-dialog .item:nth-child(3) div:nth-child(2) span {
+        flex: 1;
+        text-align: center;
+        line-height: 1.4rem;
+        border-radius: 4px; }
+      .bet-dialog .item:nth-child(2) div:nth-child(2) .active, .bet-dialog .item:nth-child(3) div:nth-child(2) .active {
+        background-color: #EA5153;
+        color: #FEFFFF; }
+  .bet-dialog .item:nth-child(4) {
+    box-sizing: border-box;
+    padding: 0.3rem 1rem; }
+    .bet-dialog .item:nth-child(4) div:nth-child(1) {
+      font-size: 0.65rem;
+      color: #A2A2A2;
+      letter-spacing: 2px; }
+    .bet-dialog .item:nth-child(4) div:nth-child(2) {
+      display: flex;
+      justify-content: space-around;
+      font-size: 0.7rem;
+      margin-top: 0.4rem;
+      flex-wrap: wrap; }
+      .bet-dialog .item:nth-child(4) div:nth-child(2) span {
+        width: 3rem;
+        text-align: center;
+        line-height: 1.4rem;
+        border-radius: 4px; }
+      .bet-dialog .item:nth-child(4) div:nth-child(2) .active {
+        background-color: #EA5153;
+        color: #FEFFFF; }
+  .bet-dialog .item:nth-child(5) {
+    text-align: center;
+    font-size: 0.65rem;
+    color: #E63738;
+    font-weight: 600;
+    height: 1.4rem;
+    line-height: 1.4rem; }
+  .bet-dialog .item:nth-child(6) {
+    box-sizing: border-box;
+    padding: 0.6rem 1rem; }
+    .bet-dialog .item:nth-child(6) .btn {
+      background-color: #EA5153;
+      height: 1.6rem;
+      width: 100%;
+      text-align: center;
+      color: #FEFFFF;
+      font-size: 0.65rem;
+      line-height: 1.6rem;
+      border-radius: 4px; }
+    .bet-dialog .item:nth-child(6) .btn:active {
+      background-color: #7f2c2e; }
+  .bet-dialog .item:nth-child(7) {
+    font-size: 0.65rem;
+    color: #A2A2A2;
+    text-align: center; }
+    .bet-dialog .item:nth-child(7) p {
+      margin: 0;
+      padding: 0;
+      line-height: 1rem;
+      letter-spacing: 1px; }
 
 /*# sourceMappingURL=index.css.map */
