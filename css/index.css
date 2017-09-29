@@ -24,6 +24,10 @@ ul li {
 
 .tab {
   position: fixed;
+  max-width: 640px;
+  left: 0;
+  right: 0;
+  margin: auto;
   bottom: 0;
   width: 100%;
   height: 2.6rem;

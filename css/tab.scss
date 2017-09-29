@@ -2,6 +2,10 @@
 
 .tab {
   position: fixed;
+  max-width: 640px;
+  left:0;
+  right: 0;
+  margin: auto;
   bottom: 0;
   width: 100%;
   height: $tabHeight;
@@ -10,28 +14,28 @@
   padding: 0 1.4rem;
   box-sizing: border-box;
   ul {
-	display: flex;
-	width: 100%;
-	justify-content: space-between;
-	align-items: center;
-	height: 100%;
-	li{
-	  height: 100%;
-	  display: flex;
-	  flex-direction: column;
-	  align-items: center;
-	  align-content: center;
-	  justify-content: center;
-	  color: $colorGray;
-	  i{
-		font-size: 1.3rem;
-	  }
-	  span{
-		font-size: $fontSize-s;
-	  }
-	}
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    li {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      align-content: center;
+      justify-content: center;
+      color: $colorGray;
+      i {
+        font-size: 1.3rem;
+      }
+      span {
+        font-size: $fontSize-s;
+      }
+    }
   }
-  .active{
-	color: $colorRed !important;
+  .active {
+    color: $colorRed !important;
   }
 }
