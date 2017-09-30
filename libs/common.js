@@ -19,8 +19,34 @@ document.body.addEventListener('touchstart', function () {
 (function ($) {
     $.fn.alert = function () {
         return this.fadeIn(500).addClass('animation-show').removeClass('animation-hide')
-    }
+    };
     $.fn.leave = function () {
         return this.addClass('animation-hide').removeClass('animation-show').fadeOut(500)
-    }
+    };
+    $.extend({
+            toast: (a) => {
+                $('.tips').slideDown(200).text(a);
+                setTimeout(() => {
+                    $('.tips').slideUp(600)
+                }, 1000)
+            }
+        }
+    )
+
 })(jQuery)
+/*底部Tab*/
+
+$('.tab ul li').on('click', function () {
+    const ID = $(this).index()
+    switch (ID) {
+        case 0:
+            location.href = 'index.html';
+            break;
+        case 1:
+            location.href = 'holdPosition.html';
+            break;
+        case 2:
+            location.href = 'master.html';
+            break;
+    }
+})

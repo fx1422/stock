@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>持仓</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no"/>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/holdPosition.css">
+</head>
+<body>
+<div class="content">
+    <div class="head item">
+        <span>日期</span><span>商品</span><span>类型</span><span>点位</span><span>档位</span><span>金额</span>
+    </div>
+    <div id="wrapper">
+        <div class="box">
+            <div class="item">
+                <span>09-08</span><span>白银</span><span class="green">看跌</span><span>买入 <i
+                    class="blue">99999</i></span><span>止盈 6666</span><span>10</span>
+            </div>
+            <div class="item">
+                <span>09-08</span><span>白银</span><span
+                    class="red">看涨</span><span>买入9283</span><span>止盈 6666</span><span>10</span>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="tab">
+    <ul>
+        <li>
+            <i class=" iconfont icon-shouye"></i>
+            <span>首页</span>
+        </li>
+        <li class="active">
+            <i class="iconfont icon-chicang"></i>
+            <span>持仓</span>
+        </li>
+        <li>
+            <i class="iconfont icon-wode"></i>
+            <span>我的</span>
+        </li>
+    </ul>
+</div>
+</body>
+<script src="libs/jquery-1.11.3.js"></script>
+<script src="libs/iscroll-lite.js"></script>
+<script src="libs/common.js"></script>
+<script>
+    window.onload = function () {
+        const myScroll = new IScroll("#wrapper");
+        myScroll.refresh();
+    }
+
+</script>
+
+
+</html>

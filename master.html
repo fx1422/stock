@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no"/>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/master.css">
+</head>
+<body>
+<div id="wrapper" class="content">
+    <div class="box">
+        <div class="item-1">
+            <div class="left"><img src="img/index/login.png" alt=""></div>
+            <div class="right"><span>个人账户 (元)</span><span class="balance">0.00</span></div>
+        </div>
+
+        <div class="item-2">
+            <div class="active"><i class="iconfont icon-chongzhijilu"></i><span>充值</span></div><div><i class="iconfont icon-tixian1"></i><span>提现</span></div>
+        </div>
+        <div class="item-3">
+            <i class="iconfont icon-weixin"></i><span>关注公众号</span><i class="iconfont icon-xiangyou"></i>
+        </div>
+        <div class="item-4">
+            <i class="iconfont icon-lishijiaoyi1 blue"></i><span>交易历史</span><i class="iconfont icon-xiangyou"></i>
+        </div>
+        <div class="item-5">
+            <i class="iconfont icon-zhangdanmingxi red"></i><span>收支明细</span><i class="iconfont icon-xiangyou"></i>
+        </div>
+        <div class="item-6">
+            <i class="iconfont icon-bangzhu brown"></i><span>帮助</span><i class="iconfont icon-xiangyou"></i>
+        </div>
+        <div class="item-7">
+            <i class="iconfont icon-shezhi blue"></i><span>设置</span><i class="iconfont icon-xiangyou"></i>
+        </div>
+        <div class="item-8">
+            <i class="iconfont icon-zhanghu green"></i><span>申请经纪人</span><i class="iconfont icon-xiangyou"></i>
+        </div>
+    </div>
+</div>
+
+
+<div class="tab">
+    <ul>
+        <li>
+            <i class=" iconfont icon-shouye"></i>
+            <span>首页</span>
+        </li>
+        <li>
+            <i class="iconfont icon-chicang"></i>
+            <span>持仓</span>
+        </li>
+        <li class="active">
+            <i class="iconfont icon-wode"></i>
+            <span>我的</span>
+        </li>
+    </ul>
+</div>
+</body>
+<script src="libs/jquery-1.11.3.js"></script>
+<script src="libs/common.js"></script>
+<script src="libs/iscroll-lite.js"></script>
+<script>
+    window.onload = function () {
+        const myScroll = new IScroll("#wrapper");
+        myScroll.refresh();
+    }
+
+    $(function () {
+       //充值||||提现
+
+
+    })
+</script>
+</html>

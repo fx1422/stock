@@ -99,21 +99,30 @@
     </div>
 </div>
 </body>
-<script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="libs/jquery-1.11.3.js"></script>
+<!--<script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>-->
 <script src="https://cdn.bootcss.com/echarts/3.7.1/echarts.min.js"></script>
 <script src="libs/common.js"></script>
 <script src="js/index.js"></script>
 <script src="js/timeChart.js"></script>
 <script src="js/candleChart.js"></script>
+<script src="js/tab.js"></script>
+
 <script>
     $(function () {
         drawTimeChart();
-        var optionType='PE',optionTrend='看涨', perPrice = 10, stall = 5, rates = 1
+        var oBet = {
+            optionType:'PE',
+            optionTrend:'看涨',
+            perPrice:10,
+            stall:5,
+            rates:1
+        }
 
         //投注弹层
         $('.betBtn').on('click', function () {
-             optionTrend = $(this).attr('data-type');
-            $('.betType').text(optionTrend);
+            oBet.optionTrend = $(this).attr('data-type');
+            $('.betType').text(oBet.optionTrend);
             $('.back-drop').show();
             $('.bet-dialog').alert()
         });
@@ -126,18 +135,18 @@
         $('.optionType div').on('click',function () {
             $('.optionType div').removeClass('active')
             $(this).addClass('active')
-            optionType = $(this).attr('data-value')
+            oBet.optionType = $(this).attr('data-value')
         })
         //选择投注的金额
         $('.betCash span').on('click', function () {
-            perPrice = $(this).attr('data-num');
+            oBet.perPrice = $(this).attr('data-num');
             $('.betCash span').removeClass('active');
             $(this).addClass('active')
         });
 
         //选择止盈止损档位
         $('.stall span').on('click', function () {
-            stall = $(this).attr('data-num')
+            oBet.stall = $(this).attr('data-num')
             $('.stall span').removeClass('active');
             $(this).addClass('active')
 
@@ -146,13 +155,14 @@
         $('.betTimes span').on('click', function () {
             $('.betTimes span').removeClass('active')
             $(this).addClass('active')
-            rates = $(this).index() + 1;
+            oBet.rates = $(this).index() + 1;
         })
         //确认投注
         $('.submit').on('click', function () {
-            console.log(optionType,optionTrend,perPrice,stall,rates)
+            console.log(JSON.stringify(oBet))
+            $('.back-drop').hide();
+            $('.bet-dialog').leave();
         })
-
         //曲线绘制
         $('.item-5 span').on('click', function () {
             const dataId = Number($(this).attr('data-id'))
