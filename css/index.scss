@@ -307,3 +307,20 @@
 	}
   }
 }
+@media screen and (min-width: 420px){
+	.bet-dialog{
+		display: none;
+		position: absolute;
+		width: 92vw;
+		height: 78vh;
+		max-width: 600px;
+		z-index: 999999999 !important;
+		background-color: #FEFFFF;
+		box-sizing: border-box;
+		top: 15vh;
+		left: 0;
+		right: 0;
+		margin: auto;
+		border-radius: 4px;
+	}
+}

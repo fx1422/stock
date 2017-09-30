@@ -9,7 +9,7 @@ body {
   height: 100%;
   width: 100%;
   background-color: black;
-  font-family: "Helvetica,Arial,'瀹嬩綋',sans-serif"; }
+  font-family: "Helvetica,Arial,'宋体',sans-serif"; }
 
 html, body, ul, img {
   padding: 0;
@@ -244,7 +244,7 @@ ul li {
   width: 92vw;
   height: 68vh;
   max-width: 600px;
-  z-index: 9999999 !important;
+  z-index: 999999999 !important;
   background-color: #FEFFFF;
   box-sizing: border-box;
   top: 23vh;
@@ -349,5 +349,21 @@ ul li {
       padding: 0;
       line-height: 1rem;
       letter-spacing: 1px; }
+
+@media screen and (min-width: 420px) {
+  .bet-dialog {
+    display: none;
+    position: absolute;
+    width: 92vw;
+    height: 78vh;
+    max-width: 600px;
+    z-index: 999999999 !important;
+    background-color: #FEFFFF;
+    box-sizing: border-box;
+    top: 15vh;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 4px; } }
 
 /*# sourceMappingURL=index.css.map */

@@ -108,7 +108,13 @@
 <script>
     $(function () {
         drawTimeChart();
-        var optionType='PE',optionTrend='看涨', perPrice = 10, stall = 5, rates = 1
+        var obj = {
+            optionType:'PE',
+            optionTrend:'看涨',
+            perPrice:10,
+            stall:5,
+            rates:1
+        }
 
         //投注弹层
         $('.betBtn').on('click', function () {
@@ -126,18 +132,18 @@
         $('.optionType div').on('click',function () {
             $('.optionType div').removeClass('active')
             $(this).addClass('active')
-            optionType = $(this).attr('data-value')
+            obj.optionType = $(this).attr('data-value')
         })
         //选择投注的金额
         $('.betCash span').on('click', function () {
-            perPrice = $(this).attr('data-num');
+            obj.perPrice = $(this).attr('data-num');
             $('.betCash span').removeClass('active');
             $(this).addClass('active')
         });
 
         //选择止盈止损档位
         $('.stall span').on('click', function () {
-            stall = $(this).attr('data-num')
+            obj.stall = $(this).attr('data-num')
             $('.stall span').removeClass('active');
             $(this).addClass('active')
 
@@ -146,11 +152,11 @@
         $('.betTimes span').on('click', function () {
             $('.betTimes span').removeClass('active')
             $(this).addClass('active')
-            rates = $(this).index() + 1;
+            obj.rates = $(this).index() + 1;
         })
         //确认投注
         $('.submit').on('click', function () {
-            console.log(optionType,optionTrend,perPrice,stall,rates)
+            console.log(JSON.stringify(obj))
         })
 
         //曲线绘制
