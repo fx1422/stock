@@ -1,0 +1,46 @@
+@import "variable";
+@import "tab";
+@import "common";
+
+.item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 0.4rem;
+  height: 6vh;
+  font-size: $fontSize-s-l;
+  align-content: center;
+  align-items: center;
+  border-bottom: 1px solid #D0D0D0;
+  background-color: $colorWhite;
+  span:nth-child(1), span:nth-child(2), span:nth-child(3), span:nth-child(6) {
+	flex: 1;
+	text-align: center;
+  }
+  span:nth-child(4), span:nth-child(5) {
+	flex: 1.6;
+	text-align: center;
+  }
+  .red{
+    color: $colorRed;
+  }
+  .green{
+    color: $colorGreen;
+  }
+  .blue{
+    color: $colorBlueLight;
+  }
+}
+
+.head {
+  height: 7vh;
+  background-color: $backgroudColor;
+  font-size: $fontSize-m-s;
+}
+
+#wrapper {
+  height: 86vh;
+  position: relative;
+  overflow: hidden
+}

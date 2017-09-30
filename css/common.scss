@@ -22,6 +22,25 @@ ul li {
   margin: auto;
   background-color: $backgroudColor;
 }
+.tips{
+  position: absolute;
+  top:0;
+  height: 4vh;
+  width:80%;
+  left: 0;
+  right:0;
+  margin: auto;
+  background-color: #64B3F0;
+  max-width: 600px;
+  font-size: $fontSize-s-l;
+  text-align: center;
+  color: $colorWhite;
+  line-height: 4vh;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius:4px;
+  display: none;
+  opacity: 0.8;
+}
 
 .animation-show {
   animation-name: show;
