@@ -6,46 +6,47 @@
   background-color: $colorWhite;
   display: flex;
   .left {
-	flex: 1;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	img {
-	  height: 3rem;
-	  width: 3rem;
-	}
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      height: 3rem;
+      width: 3rem;
+    }
   }
   .right {
-	flex: 4;
-	.top {
-	  height: 50%;
-	  color: $colorGray;
-	  line-height: 1.7rem;
-	  font-size: $fontSize-s-l;
-	  span {
-		color: $colorBrow;
-	  }
-	}
-	.bottom {
-	  display: flex;
-	  div {
-		height: 1.1rem;
-		line-height: 1.1rem;
-		font-size: $fontSize-s;
-		width: 6rem;
-		background-color: $colorBlue;
-		color: $colorWhite;
-		padding: 0.1rem;
-		text-align: center;
-		border-radius: 2px;
-		margin-right: 0.3rem;
-	  }
-	  div:active{
-		background-color: #1870B3;
-	  }
-	}
+    flex: 4;
+    .top {
+      height: 50%;
+      color: $colorGray;
+      line-height: 1.7rem;
+      font-size: $fontSize-s-l;
+      span {
+        color: $colorBrow;
+      }
+    }
+    .bottom {
+      display: flex;
+      div {
+        height: 1.1rem;
+        line-height: 1.1rem;
+        font-size: $fontSize-s;
+        width: 6rem;
+        background-color: $colorBlue;
+        color: $colorWhite;
+        padding: 0.1rem;
+        text-align: center;
+        border-radius: 2px;
+        margin-right: 0.3rem;
+      }
+      div:active {
+        background-color: #1870B3;
+      }
+    }
   }
 }
+
 //9
 .item-2 {
   height: 9vh;
@@ -54,25 +55,26 @@
   display: flex;
   text-align: left;
   div {
-	width: 50%;
-	font-size: $fontSize-m-s;
-	font-weight: 600;
-	padding-left: 0.8rem;
-	box-sizing: border-box;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	span:nth-child(2) {
-	  color: $colorRed;
-	  font-size: $fontSize-m;
-	  font-weight: 500;
-	}
+    width: 50%;
+    font-size: $fontSize-m-s;
+    font-weight: 600;
+    padding-left: 0.8rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    span:nth-child(2) {
+      color: $colorRed;
+      font-size: $fontSize-m;
+      font-weight: 500;
+    }
   }
   .active {
-	background-color: $colorGreenLight;
-	border-bottom: 2px solid $colorBlueLight;
+    background-color: $colorGreenLight;
+    border-bottom: 2px solid $colorBlueLight;
   }
 }
+
 //4
 .item-3 {
   height: 4vh;
@@ -86,12 +88,13 @@
   align-items: center;
   border-bottom: 1px solid #F0EFF4;
   span {
-	span {
-	  color: $colorBlack;
-	  font-size: $fontSize-s-l
-	}
+    span {
+      color: $colorBlack;
+      font-size: $fontSize-s-l
+    }
   }
 }
+
 //58
 .item-4 {
   width: 100%;
@@ -99,14 +102,15 @@
   background-color: $colorWhite;
   padding: 0.4rem 0;
   box-sizing: border-box;
-  #sharingPlans,#candlestickCharts{
-	height: 100%;
-	width:100%;
+  #sharingPlans, #candlestickCharts {
+    height: 100%;
+    width: 100%;
   }
-  #candlestickCharts{
-	display: none;
+  #candlestickCharts {
+    display: none;
   }
 }
+
 //4
 .item-5 {
   height: 4vh;
@@ -117,16 +121,17 @@
   color: $colorBlueLight;
   background-color: $colorWhite;
   span {
-	width: 24.8%;
-	text-align: center;
-	height: 100%;
-	line-height: 1.4rem;
-	background-color: $backgroudColor;
+    width: 24.8%;
+    text-align: center;
+    height: 100%;
+    line-height: 1.4rem;
+    background-color: $backgroudColor;
   }
   .active {
-	background-color: $colorWhite;
+    background-color: $colorWhite;
   }
 }
+
 //7
 .item-6 {
   display: flex;
@@ -138,33 +143,34 @@
   justify-content: space-around;
   background-color: $colorWhite;
   div {
-	height: 100%;
-	width: 46%;
-	border-radius: 4px;
-	text-align: center;
-	line-height: calc(8vh - 0.4rem);
+    height: 100%;
+    width: 46%;
+    border-radius: 4px;
+    text-align: center;
+    line-height: calc(8vh - 0.4rem);
   }
   div:nth-child(1) {
-	background-color: $colorRed;
+    background-color: $colorRed;
   }
   div:nth-child(1):active {
-	background-color: #982525;
+    background-color: #982525;
   }
   div:nth-child(2) {
-	background-color: $colorGreen;
+    background-color: $colorGreen;
   }
   div:nth-child(2):active {
-	background-color: #147a2b;
+    background-color: #147a2b;
   }
 }
-.back-drop{
+
+.back-drop {
   position: fixed;
   height: 100vh;
-  width:100vw;
-  top:0;
+  width: 100vw;
+  top: 0;
   max-width: 640px;
   left: 0;
-  right:0;
+  right: 0;
   margin: auto;
   background-color: #0F0F0F;
   opacity: 0.6;
@@ -174,7 +180,7 @@
 
 /*bet------dialog*/
 
-.bet-dialog{
+.bet-dialog {
   display: none;
   position: absolute;
   width: 92vw;
@@ -188,139 +194,140 @@
   right: 0;
   margin: auto;
   border-radius: 4px;
-  .item:nth-child(1){
-	height: 6vh;
-	border-bottom: 2px solid #DDDDDD;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-size: $fontSize-m-s;
-	font-weight: 600;
-	position: relative;
-	span{
-	  margin-right: 0.4rem;
-	}
-	span:nth-child(1){
-	  color: $colorRed;
-	}
-	span:nth-child(2){
-	  color: $colorRed;
-	}
-	i{
-	  position: absolute;
-	  right: 0.9rem;
-	  top:0;
-	  bottom: 0;
-	  margin: auto;
-	  font-size: 1.4rem;
-	  height: 1.4rem;
-	  color: #D6D6D6;
-	}
+  .item:nth-child(1) {
+    height: 6vh;
+    border-bottom: 2px solid #DDDDDD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: $fontSize-m-s;
+    font-weight: 600;
+    position: relative;
+    span {
+      margin-right: 0.4rem;
+    }
+    span:nth-child(1) {
+      color: $colorRed;
+    }
+    span:nth-child(2) {
+      color: $colorRed;
+    }
+    i {
+      position: absolute;
+      right: 0.9rem;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      font-size: 1.4rem;
+      height: 1.4rem;
+      color: #D6D6D6;
+    }
   }
-  .item:nth-child(2),.item:nth-child(3){
-	box-sizing: border-box;
-	padding: 0.3rem 1rem;
-	div:nth-child(1){
-	  font-size: $fontSize-s-l;
-	  color: #A2A2A2;
-	  letter-spacing: 2px;
-	}
-	div:nth-child(2){
-	  display: flex;
-	  justify-content: space-around;
-	  font-size: $fontSize-m-s;
-	  height: 1.4rem;
-	  margin-top: 0.4rem;
-	  flex-wrap: wrap;
-	  span{
-		flex: 1;
-		text-align: center;
-		line-height: 1.4rem;
-		border-radius: 4px;
-	  }
-	  .active{
-		background-color: #EA5153;
-		color: $colorWhite;
-	  }
-	}
+  .item:nth-child(2), .item:nth-child(3) {
+    box-sizing: border-box;
+    padding: 0.3rem 1rem;
+    div:nth-child(1) {
+      font-size: $fontSize-s-l;
+      color: #A2A2A2;
+      letter-spacing: 2px;
+    }
+    div:nth-child(2) {
+      display: flex;
+      justify-content: space-around;
+      font-size: $fontSize-m-s;
+      height: 1.4rem;
+      margin-top: 0.4rem;
+      flex-wrap: wrap;
+      span {
+        flex: 1;
+        text-align: center;
+        line-height: 1.4rem;
+        border-radius: 4px;
+      }
+      .active {
+        background-color: #EA5153;
+        color: $colorWhite;
+      }
+    }
   }
-  .item:nth-child(4){
-	box-sizing: border-box;
-	padding: 0.3rem 1rem;
-	div:nth-child(1){
-	  font-size: $fontSize-s-l;
-	  color: #A2A2A2;
-	  letter-spacing: 2px;
-	}
-	div:nth-child(2){
-	  display: flex;
-	  justify-content: space-around;
-	  font-size: $fontSize-m-s;
-	  margin-top: 0.4rem;
-	  flex-wrap: wrap;
-	  span{
-		width:3rem;
-		text-align: center;
-		line-height: 1.4rem;
-		border-radius: 4px;
-	  }
-	  .active{
-		background-color: #EA5153;
-		color: $colorWhite;
-	  }
-	}
+  .item:nth-child(4) {
+    box-sizing: border-box;
+    padding: 0.3rem 1rem;
+    div:nth-child(1) {
+      font-size: $fontSize-s-l;
+      color: #A2A2A2;
+      letter-spacing: 2px;
+    }
+    div:nth-child(2) {
+      display: flex;
+      justify-content: space-around;
+      font-size: $fontSize-m-s;
+      margin-top: 0.4rem;
+      flex-wrap: wrap;
+      span {
+        width: 3rem;
+        text-align: center;
+        line-height: 1.4rem;
+        border-radius: 4px;
+      }
+      .active {
+        background-color: #EA5153;
+        color: $colorWhite;
+      }
+    }
   }
-  .item:nth-child(5){
-	text-align: center;
-	font-size: $fontSize-s-l;
-	color: $colorRed;
-	font-weight: 600;
-	height: 1.4rem;
-	line-height: 1.4rem;
+  .item:nth-child(5) {
+    text-align: center;
+    font-size: $fontSize-s-l;
+    color: $colorRed;
+    font-weight: 600;
+    height: 1.4rem;
+    line-height: 1.4rem;
   }
-  .item:nth-child(6){
-	box-sizing: border-box;
-	padding: 0.6rem 1rem;
-	.btn{
-	  background-color: #EA5153;
-	  height: 1.6rem;
-	  width:100%;
-	  text-align: center;
-	  color: $colorWhite;
-	  font-size: $fontSize-s-l;
-	  line-height: 1.6rem;
-	  border-radius: 4px;
-	}
-	.btn:active{
-	  background-color: #7f2c2e;
-	}
+  .item:nth-child(6) {
+    box-sizing: border-box;
+    padding: 0.6rem 1rem;
+    .btn {
+      background-color: #EA5153;
+      height: 1.6rem;
+      width: 100%;
+      text-align: center;
+      color: $colorWhite;
+      font-size: $fontSize-s-l;
+      line-height: 1.6rem;
+      border-radius: 4px;
+    }
+    .btn:active {
+      background-color: #7f2c2e;
+    }
   }
-  .item:nth-child(7){
-	font-size: $fontSize-s-l;
-	color: #A2A2A2;
-	text-align: center;
-	p{
-	  margin: 0;
-	  padding: 0;
-	  line-height: 1rem;
-	  letter-spacing: 1px;
-	}
+  .item:nth-child(7) {
+    font-size: $fontSize-s-l;
+    color: #A2A2A2;
+    text-align: center;
+    p {
+      margin: 0;
+      padding: 0;
+      line-height: 1rem;
+      letter-spacing: 1px;
+    }
   }
 }
-@media screen and (min-width: 420px){
-	.bet-dialog{
-		display: none;
-		position: absolute;
-		width: 92vw;
-		height: 78vh;
-		max-width: 600px;
-		z-index: 999999999 !important;
-		background-color: #FEFFFF;
-		box-sizing: border-box;
-		top: 15vh;
-		left: 0;
-		right: 0;
-		margin: auto;
-		border-radius: 4px;
-	}
+
+@media screen and (min-width: 420px) {
+  .bet-dialog {
+    display: none;
+    position: absolute;
+    width: 92vw;
+    height: 78vh;
+    max-width: 600px;
+    z-index: 999999999 !important;
+    background-color: #FEFFFF;
+    box-sizing: border-box;
+    top: 15vh;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border-radius: 4px;
+  }
 }
