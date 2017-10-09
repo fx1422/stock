@@ -1,0 +1,181 @@
+@charset "UTF-8";
+/***
+公用样式表
+****/
+/*color*/
+/*字体大小*/
+/*高度*/
+/***
+公用样式表
+****/
+/*color*/
+/*字体大小*/
+/*高度*/
+body {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  font-family: "Helvetica,Arial,'瀹嬩綋',sans-serif"; }
+
+html, body, ul, img {
+  padding: 0;
+  margin: 0; }
+
+ul li {
+  list-style: none; }
+
+.content {
+  height: calc(100vh - 7vh);
+  max-width: 640px;
+  margin: auto;
+  background-color: #F3F3F3; }
+
+.tips {
+  position: absolute;
+  top: 0;
+  height: 4vh;
+  width: 80%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: #64B3F0;
+  max-width: 600px;
+  font-size: 0.65rem;
+  text-align: center;
+  color: #FEFFFF;
+  line-height: 4vh;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  display: none;
+  opacity: 0.8; }
+
+.animation-show {
+  animation-name: show;
+  animation-duration: 500ms;
+  animation-fill-mode: both;
+  -webkit-animation-name: show;
+  -webkit-animation-duration: 500ms;
+  -webkit-animation-fill-mode: both;
+  animation-timing-function: linear; }
+
+.animation-hide {
+  animation-name: hide;
+  animation-duration: 500ms;
+  animation-fill-mode: both;
+  -webkit-animation-name: hide;
+  -webkit-animation-duration: 500ms;
+  -webkit-animation-fill-mode: both;
+  animation-timing-function: linear; }
+
+@keyframes show {
+  0% {
+    transform: scale(0.2); }
+  50% {
+    transform: scale(1.1); }
+  100% {
+    transform: scale(1); } }
+@keyframes hide {
+  0% {
+    transform: scale(1); }
+  25% {
+    transform: scale(0.75); }
+  50% {
+    transform: scale(0.5); }
+  75% {
+    transform: scale(0.25); }
+  100% {
+    transform: scale(0); } }
+.content {
+  height: 100vh;
+  padding: 1rem;
+  box-sizing: border-box; }
+  .content .item {
+    height: 6.5vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.9rem;
+    position: relative; }
+    .content .item span {
+      height: 100%;
+      width: 20%;
+      font-size: 0.7rem;
+      color: #686868;
+      border: 1px solid #CCCCCC;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #FEFFFF;
+      border-right: none;
+      border-radius: 4px;
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0; }
+    .content .item span:nth-child(1) {
+      flex: 1; }
+    .content .item .getCode {
+      position: absolute;
+      border: none;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      right: 1rem;
+      height: 66.6666666667%;
+      width: 4rem;
+      line-height: 4vh;
+      text-align: center;
+      background-color: #E63738;
+      border-radius: 4px;
+      color: #FEFFFF;
+      font-size: 0.5rem;
+      cursor: pointer; }
+      .content .item .getCode i {
+        float: right;
+        margin-right: 0.4rem;
+        display: none;
+        color: #E63738; }
+    .content .item .disabled {
+      background-color: #B7B7B7; }
+    .content .item input {
+      height: 100%;
+      width: 80%;
+      border: 1px solid #CCCCCC;
+      padding: 0;
+      border-left: none;
+      border-radius: 4px;
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+      text-indent: 0.8rem;
+      font-size: 0.7rem;
+      outline: none;
+      flex: 4; }
+  .content .item-1 {
+    font-size: 0.65rem; }
+    .content .item-1 span {
+      color: #BABABA; }
+    .content .item-1 a {
+      text-decoration: none;
+      color: #E63738; }
+  .content .item-2 {
+    margin-top: 1rem;
+    height: 5.6vh;
+    background-color: #E63738;
+    color: #FEFFFF;
+    font-size: 0.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 4px; }
+  .content .gray {
+    margin-top: 0.4rem;
+    background-color: #CCCCCC !important; }
+  .content .item-3 {
+    margin-top: 1rem;
+    font-size: 0.7rem;
+    text-align: center; }
+    .content .item-3 a {
+      color: #E63738;
+      text-decoration: none; }
+
+/*# sourceMappingURL=register.css.map */
