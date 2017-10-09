@@ -7,7 +7,6 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="format-detection" content="telephone=no"/>
-    <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/iconfont.css">
     <link rel="stylesheet" href="css/master.css">
 </head>
@@ -20,15 +19,16 @@
         </div>
 
         <div class="item-2">
-            <div class="active"><i class="iconfont icon-chongzhijilu"></i><span>充值</span></div><div><i class="iconfont icon-tixian1"></i><span>提现</span></div>
+            <div class="active"><i class="iconfont icon-chongzhijilu"></i><span>充值</span></div>
+            <div><i class="iconfont icon-tixian1"></i><span>提现</span></div>
         </div>
-        <div class="item-3">
+        <div class="item-3 scanQR">
             <i class="iconfont icon-weixin"></i><span>关注公众号</span><i class="iconfont icon-xiangyou"></i>
         </div>
-        <div class="item-4">
+        <div class="item-4 historicTrade">
             <i class="iconfont icon-lishijiaoyi1 blue"></i><span>交易历史</span><i class="iconfont icon-xiangyou"></i>
         </div>
-        <div class="item-5">
+        <div class="item-5 incomeDetails">
             <i class="iconfont icon-zhangdanmingxi red"></i><span>收支明细</span><i class="iconfont icon-xiangyou"></i>
         </div>
         <div class="item-6">
@@ -42,7 +42,14 @@
         </div>
     </div>
 </div>
-
+<div class="weChat">
+    <div class="top"><span>扫描二维码关注公众号</span><i class=" close iconfont icon-ddqx"></i></div>
+    <div class="box">
+        <img src="img/wechat.png" alt="">
+        <div class="close">关闭</div>
+    </div>
+</div>
+<div class="back-drop"></div>
 
 <div class="tab">
     <ul>
@@ -66,12 +73,29 @@
 <script src="libs/iscroll-lite.js"></script>
 <script>
     window.onload = function () {
-        const myScroll = new IScroll("#wrapper");
+        const myScroll = new IScroll("#wrapper",{click:true,tap:true});
         myScroll.refresh();
-    }
-
+    };
     $(function () {
-       //充值||||提现
+        //关注微信公众号
+        $('.scanQR').on('click', function () {
+            $('.back-drop').show();
+            $('.weChat').slideDown()
+        });
+        $('.close').on('click', function () {
+            $('.weChat').slideUp(function () {
+                $('.back-drop').hide();
+            });
+        });
+        //交易历史------
+        $('.historicTrade').on('click', function () {
+            location.href = 'historicTrade.html'
+        });
+        //收支明细
+        $('.incomeDetails').on('click',function () {
+            location.href='incomeDetails.html'
+        })
+        //充值||||提现
 
 
     })

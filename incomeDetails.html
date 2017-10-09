@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>收支明细</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no"/>
+    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/incomeDetails.css">
+</head>
+<body>
+<div class="content">
+    <div class="head">
+        <span class="active" data-value="JJR">经纪人</span><span data-value="TX">提现</span><span data-value="CZ">充值</span>
+    </div>
+    <div class="sub-head">
+        <span>时间</span><span>金额</span><span>总计</span>
+    </div>
+    <div id="wrapper">
+        <div class="box"></div>
+    </div>
+    <div class="loading">
+        <img src="img/loading.gif" alt="">
+    </div>
+</div>
+
+<div class="tab">
+    <ul>
+        <li>
+            <i class=" iconfont icon-shouye"></i>
+            <span>首页</span>
+        </li>
+        <li>
+            <i class="iconfont icon-chicang"></i>
+            <span>持仓</span>
+        </li>
+        <li class="active">
+            <i class="iconfont icon-wode"></i>
+            <span>我的</span>
+        </li>
+    </ul>
+</div>
+</body>
+<script src="libs/jquery-1.11.3.js"></script>
+<script src="libs/iscroll-lite.js"></script>
+<script src="libs/common.js"></script>
+<script>
+    let myScroll = '';
+    let dataValue = 'JJR';
+    window.onload = function () {
+        myScroll = new IScroll("#wrapper", {click: true, tap: true});
+        myScroll.refresh();
+    };
+    $(function () {
+        showList();
+        //切换内容
+        $('.head span').on('click', function () {
+            dataValue = $(this).attr('data-value');
+            $('.head span').removeClass('active');
+            $(this).addClass('active');
+            showList(dataValue)
+        });
+    });
+
+    function showList() {
+        $.ajax({
+            url: 'data/income.json',
+            data: dataValue,
+            dataType: 'json',
+            callback: 'cb',
+            beforeSend: function () {
+                $('.loading').show();
+            },
+            success: function (data) {
+                let type = '';
+                let value = '';
+                let list = '';
+                for (let i = 0; i < data.length; i++) {
+                    if (data[i].money > 0) {
+                        type = 'red';
+                        value = '+'
+                    } else {
+                        type = 'green';
+                        value = ''
+                    }
+                    list += `<div class="item"><span>${data[i].time}</span><span class=${type}>${value}${data[i].money}</span><span>${data[i].recharge}</span></div>`
+                }
+                $('.box').empty().append(list);
+                myScroll.refresh();
+                $('.loading').hide();
+
+            }
+        })
+    }
+
+</script>
+</html>

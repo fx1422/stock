@@ -47,7 +47,29 @@ ul li {
   border-bottom-right-radius: 4px;
   border-bottom-left-radius: 4px;
   display: none;
-  opacity: 0.8; }
+  opacity: 0.8;
+  z-index: 999; }
+
+.loading {
+  position: absolute;
+  height: 82vh;
+  z-index: 800;
+  background-color: #5E4674;
+  opacity: 0.6;
+  top: 11vh;
+  text-align: center;
+  width: 100vw;
+  max-width: 640px;
+  display: none; }
+  .loading img {
+    width: 8rem;
+    position: absolute;
+    z-index: 850;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto; }
 
 .animation-show {
   animation-name: show;
@@ -111,7 +133,7 @@ ul li {
       align-items: center;
       align-content: center;
       justify-content: center;
-      color: #686868; }
+      color: #555555; }
       .tab ul li i {
         font-size: 1.1rem; }
       .tab ul li span {
@@ -161,7 +183,29 @@ ul li {
   border-bottom-right-radius: 4px;
   border-bottom-left-radius: 4px;
   display: none;
-  opacity: 0.8; }
+  opacity: 0.8;
+  z-index: 999; }
+
+.loading {
+  position: absolute;
+  height: 82vh;
+  z-index: 800;
+  background-color: #5E4674;
+  opacity: 0.6;
+  top: 11vh;
+  text-align: center;
+  width: 100vw;
+  max-width: 640px;
+  display: none; }
+  .loading img {
+    width: 8rem;
+    position: absolute;
+    z-index: 850;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto; }
 
 .animation-show {
   animation-name: show;

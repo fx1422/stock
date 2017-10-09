@@ -25,15 +25,16 @@ document.body.addEventListener('touchstart', function () {
     };
     $.extend({
             toast: (a) => {
-                $('.tips').slideDown(200).text('☹️        '+a);
+                $('.tips').slideDown(200).text('☹️        ' + a);
                 setTimeout(() => {
                     $('.tips').slideUp(600)
                 }, 1000)
             }
         }
-    )
+    );
 
-})(jQuery)
+
+})(jQuery);
 /*底部Tab*/
 
 $('.tab ul li').on('click', function () {
