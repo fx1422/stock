@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>我的</title>
+    <title>个人中心</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -31,13 +31,13 @@
         <div class="item-5 incomeDetails">
             <i class="iconfont icon-zhangdanmingxi red"></i><span>收支明细</span><i class="iconfont icon-xiangyou"></i>
         </div>
-        <div class="item-6">
+        <div class="item-6 help">
             <i class="iconfont icon-bangzhu brown"></i><span>帮助</span><i class="iconfont icon-xiangyou"></i>
         </div>
-        <div class="item-7">
+        <div class="item-7 setting">
             <i class="iconfont icon-shezhi blue"></i><span>设置</span><i class="iconfont icon-xiangyou"></i>
         </div>
-        <div class="item-8">
+        <div class="item-8  applyAgent">
             <i class="iconfont icon-zhanghu green"></i><span>申请经纪人</span><i class="iconfont icon-xiangyou"></i>
         </div>
     </div>
@@ -94,6 +94,18 @@
         //收支明细
         $('.incomeDetails').on('click',function () {
             location.href='incomeDetails.html'
+        });
+        //设置
+        $('.setting').on('click',function () {
+            location.href='setting.html'
+        })
+        //申请经纪人
+        $('.applyAgent').on('click',function () {
+            location.href='applyAgent.html'
+        })
+        //帮助
+        $('.help').on('click',function () {
+            location.href='help.html'
         })
         //充值||||提现
 

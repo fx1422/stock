@@ -1,0 +1,101 @@
+@import "variable";
+@import "common";
+.content {
+  height: 100vh;
+  padding: 1rem;
+  box-sizing: border-box;
+  .item{
+	height: 6.5vh;
+	width:100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 0.9rem;
+	position: relative;
+	span{
+	  height: 100%;
+	  width:20%;
+	  font-size: $fontSize-m-s;
+	  color: $colorGray;
+	  border: 1px solid #CCCCCC;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  background-color: $colorWhite;
+	  border-right:none ;
+	  border-radius: 4px;
+	  border-bottom-right-radius: 0;
+	  border-top-right-radius: 0;
+	}
+	span:nth-child(1){
+	  flex:1.6;
+	}
+	.getCode{
+	  position: absolute;
+	  border:none;
+	  top:0;
+	  bottom: 0;
+	  margin: auto;
+	  right: 1rem;
+	  height:2/3*100%;
+	  width:5rem;
+	  line-height: 4vh;
+	  text-align: center;
+	  background-color: $colorRed;
+	  border-radius: 4px;
+	  color: $colorWhite;
+	  font-size: $fontSize-s;
+	  cursor: pointer;
+	  i{
+		float: right;
+		margin-right: 0.4rem;
+		display: none;
+		color: $colorRed;
+	  }
+	  
+	}
+	.disabled{
+	  background-color: #B7B7B7;
+	  
+	}
+	input{
+	  height: 100%;
+	  width:80%;
+	  border: 1px solid #CCCCCC;
+	  padding: 0;
+	  border-left: none;
+	  border-radius: 4px;
+	  border-bottom-left-radius: 0;
+	  border-top-left-radius: 0;
+	  text-indent: 0.8rem;
+	  font-size: $fontSize-m-s;
+	  outline:none;
+	  flex:4;
+	}
+  }
+  .item-1{
+	display: flex;
+	height: 4vh;
+	align-items: center;
+	font-size: $fontSize-m-s;
+	color: #9B9B9B;
+	padding: 0 0.6rem;
+	box-sizing: border-box;
+  }
+  .item-2{
+	margin-top: 1rem;
+	height: 5.6vh;
+	background-color: $colorRed;
+	color: $colorWhite;
+	font-size: $fontSize-m-s;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	border-radius: 4px;
+  }
+  .gray{
+	margin-top: 0.4rem;
+	background-color: #CCCCCC !important;
+  }
+}

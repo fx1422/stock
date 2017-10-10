@@ -1,0 +1,23 @@
+@import "common";
+@import "tab";
+@import "variable";
+.item{
+  display: flex;
+  height: 7vh;
+  background-color: $colorWhite;
+  border: 1px solid #EAEAEA;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 1rem;
+  cursor: pointer;
+  span{
+	color: #545454;
+	font-size: $fontSize-m-s;
+  }
+  i{
+	color: #C7C7C7;
+	font-size: 1.2rem;
+  }
+}
+

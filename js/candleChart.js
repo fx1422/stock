@@ -169,7 +169,7 @@ function drawCandleChart() {
     const data = rawData.map(function (item) {
         return [+item['open'], +item['close'], +item['low'], +item['high']];
     });
-
+    console.log(data)
     const option = {
         backgroundColor: '#ffffff',
         legend: {
@@ -283,10 +283,53 @@ function drawCandleChart() {
             }
         ]
     };
-    setTimeout(showChart, 1000)
+    setTimeout(showChart, 1000);
+    setInterval(function () {
+        let arr = [3616.47, parseInt(Math.random() * 5 + 3614), 3614.64, 3622.89];
+        data.pop();
+        data.push(arr);
+        myChart.setOption({
+            series: [{
+                type: 'candlestick',
+                data: data,
+                markLine: {
+                    symbol: ['none', 'none'],
+                    lineStyle: {
+                        normal: {
+                            color: 'red',
+                            position: 'top',
+                        },
+
+                    },
+                    label: {
+                        normal: {
+                            position: 'middle',
+                            show: true,
+                            color:'#121212',
+                            fontWeight:'bold'
+                        }
+                    },
+                    data: [
+                        [
+                            {
+                                name: data[data.length - 1][1],
+                                coord: [0, data[data.length - 1][1]]
+                            },
+                            {
+                                coord: [data.length - 1, data[data.length - 1][1]]
+                            }
+                        ]
+                    ]
+                }
+            }]
+        });
+    }, 500);
+
+
     function showChart() {
-        myChart.hideLoading()
+        myChart.hideLoading();
         myChart.setOption(option);
     }
+
     window.onresize = myChart.resize;
 }

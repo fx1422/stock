@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>设置</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no"/>
+    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/setting.css">
+</head>
+<body>
+<div class="content">
+    <div class="wrapper">
+        <div class="box">
+            <div class="item">
+                <span>头像</span><img src="img/index/login.png" alt="">
+            </div>
+            <div class="item">
+                <span>昵称</span><input type="text" value="玉壶冰">
+            </div>
+            <div class="item">
+                <span>性别</span><input type="text" value="未知">
+            </div>
+            <div class="item">
+                <span>手机</span><input class="tel" type="tel" value="15275255753">
+            </div>
+            <div id="revisePw" class="item">
+                <span>修改登录密码</span><i class="iconfont icon-xiangyou"></i>
+            </div>
+            <div id="forgetPw" class="item">
+                <span>忘记登录密码</span><i class="iconfont icon-xiangyou"></i>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="back-drop"></div>
+<!--修改登录密码-->
+<div class="revisePw">
+    <div class="top">
+        <span>修改登录密码</span><i class="close iconfont icon-ddqx"></i>
+    </div>
+    <div class="box">
+        <div class="item">
+            <span>旧密码</span><input class="reviseInput" type="password" placeholder="请输入旧密码">
+        </div>
+        <div class="item">
+            <span>新密码</span><input class="reviseInput" type="password" placeholder="请输入新密码">
+        </div>
+        <div class="item">
+            <span>确认新密码</span><input class="reviseInput" type="password" placeholder="请确定新密码">
+        </div>
+        <div class="btn reviseSubmit">重置密码</div>
+    </div>
+
+</div>
+
+<!--忘记登录密码-->
+<div class="resetPw">
+    <div class="top">
+        <span>忘记登录密码</span><i class="close iconfont icon-ddqx"></i>
+    </div>
+    <div class="box">
+        <div class="item">
+            <span>新密码</span><input class="forgetInput" type="password" placeholder="请输入新密码">
+        </div>
+        <div class="item">
+            <span>确认密码</span><input class="forgetInput" type="password" placeholder="请确认新密码">
+        </div>
+        <div class="item">
+            <span>验证码</span><input class="forgetInput" type="number" placeholder="请输入验证码">
+            <button class="getCode">点击获取<i>30</i></button>
+        </div>
+        <div class="btn forgetSubmit">重置密码</div>
+    </div>
+
+</div>
+
+
+<div class="tab">
+    <ul>
+        <li>
+            <i class=" iconfont icon-shouye"></i>
+            <span>首页</span>
+        </li>
+        <li>
+            <i class="iconfont icon-chicang"></i>
+            <span>持仓</span>
+        </li>
+        <li class="active">
+            <i class="iconfont icon-wode"></i>
+            <span>我的</span>
+        </li>
+    </ul>
+</div>
+<div class="tips"></div>
+</body>
+<script src="libs/jquery-1.11.3.js"></script>
+<script src="libs/common.js"></script>
+<script src="libs/iscroll-lite.js"></script>
+<script>
+    let myScroll;
+    let passWord ='fx112233';
+    let code = '1234'
+    window.onload = function () {
+        myScroll = new IScroll(".wrapper", {click: true, tap: true});
+        myScroll.refresh();
+    };
+
+    $(function () {
+        //获取短信验证码
+        $('.getCode').on('click', function () {
+            $(this).attr('disabled', true).addClass('disabled').find('i').show();
+            setInt = setInterval(cutTimeDown, 1000)
+        });
+
+
+        /*--------------------修改密码-----------------------------*/
+        //打开修改密码弹层
+        $('#revisePw').on('click', function () {
+            $('.revisePw').alert();
+            $('.back-drop').show()
+        });
+        //提交
+        $('.reviseSubmit').on('click', function () {
+            //校验
+            const obj = $.makeArray($('.reviseInput'));
+            for(let k = 0; k < obj.length; k++){
+                if (obj[k].value.trim() === '' || obj[k].value.trim() === null) {
+                    return ((k) => {
+                        switch (k) {
+                            case 0:
+                                $.toast('旧密码不能为空');
+                                break;
+                            case 1:
+                                $.toast('新密码不能为空');
+                                break;
+                            case 2:
+                                $.toast('确认密码不能为空');
+                                break;
+                        }
+                    })(k)
+                }else if(obj[1].value.trim()!==obj[2].value.trim()){
+                    $.toast('两次输入的密码不一致');
+                }else if(obj[0].value.trim()!==passWord){
+                   $.toast('旧密码不正确')
+                }else {
+                    $.toast('密码修改成功！');
+                    $('.resetPw,.revisePw').leave();
+                    $('.back-drop').hide()
+                }
+            }
+
+
+        });
+        /*--------------------忘记密码-----------------------------------*/
+
+        $('#forgetPw').on('click', function () {
+            $('.resetPw').alert();
+            $('.back-drop').show()
+        });
+        //提交
+        $('.forgetSubmit').on('click', function () {
+            const obj = $.makeArray($('.forgetInput'));
+            for(let k = 0; k < obj.length; k++){
+                if (obj[k].value.trim() === '' || obj[k].value.trim() === null) {
+                    return ((k) => {
+                        switch (k) {
+                            case 0:
+                                $.toast('新密码不能为空');
+                                break;
+                            case 1:
+                                $.toast('确认密码不能为空');
+                                break;
+                            case 2:
+                                $.toast('验证码不能为空');
+                                break;
+                        }
+                    })(k)
+                }else if(obj[0].value.trim()!==obj[1].value.trim()){
+                    $.toast('两次输入的密码不一致');
+                }else if(obj[2].value.trim()!==code){
+                    $.toast('验证码不正确')
+                }else {
+                    $.toast('密码修改成功！');
+                    $('.resetPw,.revisePw').leave();
+                    $('.back-drop').hide()
+                }
+            }
+        });
+
+
+        //关闭弹层
+        $('.close').on('click', function () {
+            $('.resetPw,.revisePw').leave();
+            $('.back-drop').hide()
+        })
+    });
+
+    function cutTimeDown() {
+        let Time = Number($('.getCode').find('i').text());
+        if (Time <= 1) {
+            clearInterval(setInt);
+            $('.getCode').attr('disabled', false).removeClass('disabled').find('i').text(30).hide();
+        } else {
+            Time--;
+            Number($('.getCode').find('i').text(Time))
+        }
+    }
+
+</script>
+</html>
